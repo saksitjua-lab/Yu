@@ -1,281 +1,356 @@
-/* การเลื่อนหน้าจอแบบนุ่มนวล */
+/* ================= Base Styles ================= */
 html {
     scroll-behavior: smooth;
 }
 
 body {
     font-family: 'Sarabun', sans-serif;
-    background-color: #121212; /* สีพื้นหลังหลัก ดำสนิท */
-    color: #e0e0e0; /* สีตัวอักษรหลัก เทาอ่อน */
+    background-color: #0f0f11; /* สีดำเข้มเหลือบเทา */
+    color: #d1d1d1;
     margin: 0;
     padding: 0;
-    line-height: 1.6;
+    line-height: 1.7;
+    overflow-x: hidden;
 }
 
-/* แถบเมนูด้านบน (Navbar) */
-.navbar {
-    background-color: rgba(24, 24, 24, 0.95); /* สีดำโปร่งแสงนิดๆ */
-    backdrop-filter: blur(10px); /* เบลอพื้นหลัง */
+h1, h2, h3 {
+    color: #ffffff;
+    margin: 0;
+}
+
+.mt-3 {
+    margin-top: 15px;
+}
+
+/* ================= Top Bar & Menu ================= */
+.top-bar {
     position: fixed;
     top: 0;
     width: 100%;
+    height: 70px;
+    background-color: rgba(15, 15, 17, 0.85);
+    backdrop-filter: blur(12px);
     display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    padding: 15px 10px;
-    z-index: 1000;
-    border-bottom: 1px solid #333;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 999;
+    border-bottom: 1px solid #2a2a2a;
 }
 
-.navbar a {
-    color: #b0b0b0;
-    text-decoration: none;
-    margin: 5px 12px;
-    font-size: 0.95em;
-    font-weight: 600;
+.logo {
+    font-weight: 700;
+    font-size: 1.2em;
+    color: #ffffff;
+    letter-spacing: 2px;
+    margin-left: 25px;
+}
+
+.menu-icon {
+    font-size: 28px;
+    color: #ffffff;
+    margin-right: 25px;
+    cursor: pointer;
     transition: color 0.3s;
 }
 
-.navbar a:hover {
-    color: #ffffff;
+.menu-icon:hover {
+    color: #888888;
 }
 
-/* ส่วนหัว (Hero) */
-.hero {
-    background: linear-gradient(180deg, #1a1a1a 0%, #121212 100%);
-    text-align: center;
-    padding: 140px 20px 60px 20px;
+/* Side Menu (สไลด์จากขวา) */
+.side-menu {
+    position: fixed;
+    top: 0;
+    right: -300px;
+    width: 260px;
+    height: 100vh;
+    background-color: #1a1a1d;
+    box-shadow: -5px 0 20px rgba(0,0,0,0.5);
+    z-index: 1000;
+    transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    padding-top: 80px;
+    border-left: 1px solid #2a2a2a;
+}
+
+.side-menu.active {
+    right: 0;
+}
+
+.side-menu a {
+    display: block;
+    padding: 15px 30px;
+    color: #bbbbbb;
+    text-decoration: none;
+    font-size: 1.1em;
     border-bottom: 1px solid #222;
+    transition: all 0.3s;
+}
+
+.side-menu a:hover {
+    color: #ffffff;
+    background-color: #2a2a2d;
+    padding-left: 40px; /* เอฟเฟกต์ขยับข้อความตอนเอาเมาส์ชี้ */
+}
+
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    font-size: 35px !important;
+    border: none !important;
+    padding: 0 !important;
+    color: #888 !important;
+}
+
+.close-btn:hover {
+    background-color: transparent !important;
+    color: #ffffff !important;
+}
+
+/* ================= Hero Section ================= */
+.hero {
+    padding: 160px 20px 80px 20px;
+    text-align: center;
+    background: radial-gradient(circle at 50% 0%, #2a2a30 0%, #0f0f11 70%);
+}
+
+.profile-glow {
+    display: inline-block;
+    padding: 4px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #555555, #111111);
+    margin-bottom: 25px;
 }
 
 .profile-img {
-    width: 140px;
-    height: 140px;
+    width: 150px;
+    height: 150px;
     border-radius: 50%;
     object-fit: cover;
-    border: 4px solid #444; /* กรอบรูปสีเทา */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
-    margin-bottom: 20px;
-    background-color: #222;
+    display: block;
+    border: 4px solid #1a1a1d;
 }
 
 .hero h1 {
-    color: #ffffff;
-    margin: 0 0 10px 0;
-    font-size: 2.2em;
-    letter-spacing: 1.5px;
-}
-
-.hero p {
-    color: #999;
-    font-size: 1em;
-    margin: 0;
-}
-
-/* คอนเทนเนอร์เนื้อหา (Responsive Width) */
-.container {
-    max-width: 760px; /* กำหนดความกว้างสูงสุดให้ดูสวยบนคอมฯ */
-    margin: 0 auto;
-    padding: 40px 20px;
-}
-
-/* โครงสร้างแต่ละหัวข้อ */
-.section {
-    margin-bottom: 40px;
-}
-
-.section-header {
-    display: flex;
-    align-items: center;
-    margin-bottom: 15px;
-}
-
-.badge {
-    background-color: #333333; /* วงกลมตัวเลขสีเทาเข้ม */
-    color: #ffffff;
-    width: 35px;
-    height: 35px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-weight: bold;
-    font-size: 1.1em;
-    margin-right: 15px;
-    border: 1px solid #555;
-}
-
-.section-header h2 {
-    margin: 0;
-    color: #ffffff;
-    font-size: 1.4em;
-    font-weight: 700;
-}
-
-/* กล่องเนื้อหา (Card) - เน้นโทนเทาเข้ม */
-.card {
-    background-color: #1e1e1e;
-    border: 1px solid #2c2c2c;
-    border-radius: 12px;
-    padding: 25px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
-    transition: transform 0.3s, border-color 0.3s;
-}
-
-.card:hover {
-    border-color: #444;
-}
-
-/* ตัวอักษรตกแต่ง */
-.about-text {
-    color: #cccccc;
-    margin: 0;
-}
-
-.text-accent {
-    color: #a0a0a0;
-    font-weight: 600;
-    margin-bottom: 5px;
-    font-size: 0.9em;
-}
-
-.title-bold {
-    margin: 5px 0;
-    font-size: 1.3em;
-    color: #ffffff;
-}
-
-.text-light-gray {
-    color: #a0a0a0;
-    font-size: 0.95em;
-    margin-top: 5px;
-}
-
-.mt-2 {
-    margin-top: 10px;
-}
-
-/* ป้ายสถานะ (Tag) */
-.tag-dark {
-    background-color: #333;
-    color: #ccc;
-    padding: 4px 12px;
-    border-radius: 20px;
-    font-size: 0.85em;
-    font-weight: 600;
-    display: inline-block;
-    border: 1px solid #444;
-}
-
-/* รายการแบบจุด (List) */
-.task-list {
-    padding-left: 20px;
-    color: #cccccc;
-}
-
-.task-list li {
+    font-size: 2.5em;
+    letter-spacing: 1px;
     margin-bottom: 10px;
 }
 
-/* กล่องผลงาน */
-.card-project {
-    padding: 0; /* เอา padding ออกเพื่อทำส่วนหัว */
-    overflow: hidden;
-}
-
-.card-project .card-header {
-    background-color: #2a2a2a;
-    color: #ffffff;
-    padding: 15px 25px;
+.subtitle {
+    color: #888888;
     font-size: 1.1em;
-    font-weight: bold;
-    border-bottom: 1px solid #333;
+    font-weight: 300;
 }
 
-.card-project .card-body {
-    padding: 25px;
+/* ================= Main Content & Sections ================= */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px 20px 60px 20px;
 }
 
-/* กล่องทักษะ (Skills Box) */
-.skills-container {
+.section {
+    margin-bottom: 60px;
+}
+
+/* หัวข้อแบบมีตัวเลขกำกับสไตล์ Tech */
+.section-title {
+    display: flex;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.section-title .num {
+    font-size: 0.9em;
+    font-weight: 700;
+    color: #666666;
+    margin-right: 15px;
+    letter-spacing: 1px;
+    border-bottom: 2px solid #444;
+    padding-bottom: 2px;
+}
+
+.section-title h2 {
+    font-size: 1.6em;
+    font-weight: 600;
+}
+
+/* กล่องเนื้อหา (Content Box) */
+.content-box {
+    background-color: #161619;
+    padding: 30px;
+    border-radius: 12px;
+    border: 1px solid #222222;
+}
+
+.content-box p {
+    margin: 0;
+    color: #b0b0b0;
+}
+
+/* ตกแต่งเส้นแถบด้านซ้าย */
+.border-left-accent {
+    border-left: 4px solid #555555;
+}
+
+/* การศึกษา & ประสบการณ์ */
+.year-text {
+    font-size: 0.85em;
+    color: #777777 !important;
+    margin-bottom: 8px !important;
+    letter-spacing: 1px;
+}
+
+.desc-text {
+    font-size: 0.95em;
+    color: #999999 !important;
+    margin-top: 5px !important;
+}
+
+.gpa-badge {
+    display: inline-block;
+    margin-top: 15px;
+    background-color: #222222;
+    padding: 5px 15px;
+    border-radius: 6px;
+    font-size: 0.9em;
+    font-weight: 600;
+    color: #ffffff;
+    border: 1px solid #333;
+}
+
+.box-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.status-tag {
+    background-color: #2a2a2a;
+    color: #cccccc;
+    font-size: 0.8em;
+    padding: 4px 12px;
+    border-radius: 20px;
+    border: 1px solid #444;
+}
+
+.custom-list {
+    padding-left: 20px;
+    color: #b0b0b0;
+}
+
+.custom-list li {
+    margin-bottom: 8px;
+}
+
+/* ทักษะ (Skills) */
+.skills-grid {
     display: flex;
     flex-wrap: wrap;
     gap: 12px;
 }
 
-.skill-box {
-    background-color: #222222;
-    border: 1px solid #3c3c3c;
-    padding: 10px 20px;
-    border-radius: 8px;
-    color: #e0e0e0;
-    font-weight: 600;
-    transition: background-color 0.3s;
+.skill-item {
+    background-color: #1a1a1d;
+    border: 1px solid #333333;
+    padding: 10px 22px;
+    border-radius: 30px; /* ทำปุ่มให้โค้งมน */
+    font-size: 0.95em;
+    color: #dddddd;
+    transition: all 0.3s;
 }
 
-.skill-box:hover {
+.skill-item:hover {
     background-color: #333333;
+    border-color: #555555;
+    transform: translateY(-3px);
 }
 
-/* ปุ่ม Email */
-.contact-card {
+/* ผลงาน (Projects) */
+.project-card {
+    background-color: #161619;
+    padding: 35px;
+    border-radius: 12px;
+    border: 1px solid #222222;
+    position: relative;
+    overflow: hidden;
+    transition: border-color 0.3s;
+}
+
+.project-card:hover {
+    border-color: #555555;
+}
+
+.project-type {
+    font-size: 0.8em;
+    color: #888888;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+}
+
+.project-card p {
+    color: #b0b0b0;
+    margin-top: 15px;
+    margin-bottom: 0;
+}
+
+/* ติดต่อ (Contact) */
+.contact-box {
     text-align: center;
+    background-color: #161619;
+    padding: 40px 20px;
+    border-radius: 12px;
+    border: 1px solid #222222;
 }
 
-.btn-email {
-    background-color: #ffffff;
-    color: #121212;
-    text-decoration: none;
-    padding: 12px 30px;
-    border-radius: 25px;
+.action-btn {
     display: inline-block;
-    font-weight: bold;
-    margin-bottom: 15px;
-    transition: background-color 0.3s, transform 0.2s;
+    background-color: #ffffff;
+    color: #000000;
+    text-decoration: none;
+    padding: 12px 35px;
+    border-radius: 8px;
+    font-weight: 700;
+    transition: all 0.3s;
 }
 
-.btn-email:hover {
+.action-btn:hover {
     background-color: #cccccc;
-    transform: translateY(-2px);
 }
 
-/* ส่วนท้าย (Footer) */
+.contact-info p {
+    margin: 5px 0;
+    color: #aaaaaa;
+}
+
+/* ================= Footer ================= */
 footer {
     text-align: center;
     padding: 30px;
-    color: #666;
+    border-top: 1px solid #1a1a1d;
+    color: #555555;
     font-size: 0.9em;
-    border-top: 1px solid #222;
 }
 
-/* ==================================================
-   Media Queries (ปรับโครงสร้างอัตโนมัติเมื่อจอใหญ่ขึ้น)
-   ================================================== */
+/* ================= Responsive (สำหรับหน้าจอคอมพิวเตอร์) ================= */
 @media (min-width: 768px) {
-    /* บนหน้าจอคอมพิวเตอร์และแท็บเล็ตแนวนอน */
-    
-    .navbar a {
-        font-size: 1.05em;
-        margin: 5px 20px;
+    .container {
+        padding: 40px 20px 80px 20px;
     }
-
+    
     .hero h1 {
-        font-size: 3em;
-    }
-
-    .hero p {
-        font-size: 1.1em;
+        font-size: 3.2em;
     }
     
-    .card {
-        padding: 35px; /* เพิ่มพื้นที่ว่างในกล่องให้ดูโปร่งขึ้น */
+    .content-box, .project-card {
+        padding: 40px;
     }
-
-    .card-project .card-header {
-        padding: 20px 35px;
-    }
-
-    .card-project .card-body {
-        padding: 30px 35px;
+    
+    .box-header {
+        justify-content: flex-start;
+        gap: 20px;
     }
 }
