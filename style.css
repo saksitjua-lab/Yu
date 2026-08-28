@@ -1,4 +1,4 @@
-/* เพิ่ม Smooth Scrolling ให้เลื่อนแบบนุ่มนวล */
+/* การเลื่อนหน้าจอแบบนุ่มนวล */
 html {
     scroll-behavior: smooth;
 }
@@ -11,6 +11,7 @@ body {
     display: flex;
     justify-content: center;
     color: #222;
+    overflow-x: hidden; /* ป้องกันไม่ให้หน้าจอเลื่อนแนวนอน */
 }
 
 .resume-wrapper {
@@ -27,6 +28,7 @@ body {
     display: flex;
     align-items: center;
     padding-left: 230px;
+    position: relative; /* สำคัญมาก เพื่อให้ปุ่ม 3 ขีดเกาะอยู่มุมขวาบน */
 }
 
 .header h1 {
@@ -47,32 +49,73 @@ body {
     background-color: #fff;
 }
 
+/* ================================
+   ส่วนตกแต่งปุ่มและเมนูสไลด์ด้านข้าง 
+   ================================ */
+.menu-icon {
+    position: absolute;
+    top: 25px;
+    right: 35px;
+    font-size: 35px;
+    color: #ffffff;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.menu-icon:hover {
+    color: #cccccc;
+}
+
+.side-menu {
+    position: fixed; /* ให้เมนูลอยอยู่กับที่ */
+    top: 0;
+    right: -280px; /* ซ่อนเมนูไว้ทางขวานอกจอ */
+    width: 280px;
+    height: 100%;
+    background-color: #333333;
+    box-shadow: -4px 0 15px rgba(0,0,0,0.5);
+    transition: right 0.4s ease; /* เอฟเฟกต์การสไลด์ */
+    z-index: 100; /* ให้อยู่ชั้นบนสุดเสมอ */
+    padding-top: 80px;
+}
+
+/* คลาสที่จะถูกเรียกใช้งานเมื่อกดปุ่ม */
+.side-menu.active {
+    right: 0; 
+}
+
+.side-menu a {
+    padding: 15px 30px;
+    text-decoration: none;
+    font-size: 1.2em;
+    color: #ffffff;
+    display: block;
+    transition: background-color 0.3s;
+    border-bottom: 1px solid #444444;
+}
+
+.side-menu a:hover {
+    background-color: #555555;
+}
+
+.side-menu .close-btn {
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    font-size: 40px;
+    border-bottom: none;
+    padding: 0;
+}
+
+.side-menu .close-btn:hover {
+    background-color: transparent;
+    color: #ff6666; /* สีแดงตอนชี้เมาส์ที่ปุ่มปิด */
+}
+
+/* ================================ */
+
 .content {
     padding: 90px 40px 30px 40px;
-}
-
-/* ตกแต่งปุ่มเมนู (เพิ่มใหม่) */
-.nav-menu {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-bottom: 30px;
-    margin-top: 10px;
-}
-
-.btn {
-    background-color: #555555;
-    color: #ffffff;
-    text-decoration: none;
-    padding: 8px 16px;
-    border-radius: 20px;
-    font-size: 0.9em;
-    transition: background-color 0.3s, transform 0.2s;
-}
-
-.btn:hover {
-    background-color: #333333; /* เปลี่ยนสีเมื่อเอาเมาส์ชี้ */
-    transform: translateY(-2px); /* ทำให้ปุ่มเด้งขึ้นนิดนึงตอนชี้ */
 }
 
 .section {
