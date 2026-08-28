@@ -1,6 +1,11 @@
+/* เพิ่ม Smooth Scrolling ให้เลื่อนแบบนุ่มนวล */
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: 'Sarabun', sans-serif;
-    background-color: #f0f0f0; /* สีพื้นหลังด้านนอกสุด */
+    background-color: #f0f0f0;
     margin: 0;
     padding: 20px;
     display: flex;
@@ -9,7 +14,7 @@ body {
 }
 
 .resume-wrapper {
-    background-color: #e3e3e3; /* สีพื้นหลังกรอบ Resume สีเทาอ่อน */
+    background-color: #e3e3e3;
     width: 100%;
     max-width: 800px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.15);
@@ -17,11 +22,11 @@ body {
 }
 
 .header {
-    background-color: #555555; /* สีเทาเข้มส่วนหัว */
+    background-color: #555555;
     height: 140px;
     display: flex;
     align-items: center;
-    padding-left: 230px; /* เว้นที่ด้านซ้ายให้รูปภาพ */
+    padding-left: 230px;
 }
 
 .header h1 {
@@ -38,12 +43,36 @@ body {
     width: 150px;
     height: 190px;
     object-fit: cover;
-    border: 4px solid #ffffff; /* กรอบสีขาวรอบรูป */
+    border: 4px solid #ffffff;
     background-color: #fff;
 }
 
 .content {
-    padding: 90px 40px 30px 40px; /* เว้นระยะด้านบนให้พ้นรูปภาพที่ยื่นลงมา */
+    padding: 90px 40px 30px 40px;
+}
+
+/* ตกแต่งปุ่มเมนู (เพิ่มใหม่) */
+.nav-menu {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 30px;
+    margin-top: 10px;
+}
+
+.btn {
+    background-color: #555555;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.9em;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.btn:hover {
+    background-color: #333333; /* เปลี่ยนสีเมื่อเอาเมาส์ชี้ */
+    transform: translateY(-2px); /* ทำให้ปุ่มเด้งขึ้นนิดนึงตอนชี้ */
 }
 
 .section {
@@ -65,12 +94,12 @@ body {
 
 hr {
     border: 0;
-    border-top: 1px solid #cccccc; /* เส้นคั่นบางๆ สีเทา */
+    border-top: 1px solid #cccccc;
     margin: 25px 0;
 }
 
 .footer {
-    background-color: #555555; /* สีเทาเข้มส่วนท้าย */
+    background-color: #555555;
     color: #ffffff;
     padding: 25px 40px;
 }
