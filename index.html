@@ -3,83 +3,140 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Resume - Saksit Juasakul</title>
-    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;700&display=swap" rel="stylesheet">
+    <title>Saksit Juasakul | Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div class="resume-wrapper">
-    <!-- ส่วนหัว (Header) -->
-    <header class="header">
-        <img src="profile.jpg" alt="Profile Picture" class="profile-img">
-        <h1>SAKSIT JUASAKUL</h1>
-        
-        <!-- ปุ่ม 3 ขีด (Hamburger Menu) มุมขวาบน -->
-        <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
-    </header>
-
-    <!-- เมนูสไลด์ด้านข้าง (จะซ่อนไว้ตอนแรก) -->
-    <nav class="side-menu" id="sideMenu">
-        <!-- ปุ่มกากบาทปิดเมนู -->
-        <a href="javascript:void(0)" class="close-btn" onclick="toggleMenu()">&times;</a>
-        
-        <!-- รายการหัวข้อ (เมื่อกดแล้วจะปิดเมนูอัตโนมัติ) -->
-        <a href="#about" onclick="toggleMenu()">ส่วนแนะนำตัว</a>
-        <a href="#work" onclick="toggleMenu()">รายละเอียดงาน</a>
-        <a href="#education" onclick="toggleMenu()">ประวัติการศึกษา</a>
-        <a href="#skills" onclick="toggleMenu()">ทักษะและผลงาน</a>
+    <!-- แถบเมนูด้านบน -->
+    <nav class="navbar">
+        <a href="#about">เกี่ยวกับฉัน</a>
+        <a href="#education">การศึกษา</a>
+        <a href="#experience">ประสบการณ์</a>
+        <a href="#skills">ทักษะ</a>
+        <a href="#projects">ผลงาน</a>
+        <a href="#contact">ติดต่อ</a>
     </nav>
 
-    <!-- ส่วนเนื้อหา (Content) -->
-    <main class="content">
+    <!-- ส่วนหัว (Hero Section) -->
+    <header class="hero">
+        <img src="profile.jpg" alt="Profile Picture" class="profile-img">
+        <h1>Saksit<br>Juasakul</h1>
+        <p>นายศักดิ์สิทธิ์ เจือสกุล | นักศึกษาสหกิจศึกษา<br>สาขาเทคโนโลยีสารสนเทศและการสื่อสาร</p>
+    </header>
+
+    <!-- เนื้อหาหลัก -->
+    <main class="container">
+        
+        <!-- 1. เกี่ยวกับฉัน -->
         <section id="about" class="section">
-            <h2>ส่วนแนะนำตัว</h2>
-            <p>ชื่อ-นามสกุล: นายศักดิ์สิทธิ์ เจือสกุล (Saksit Juasakul)</p>
-            <p>สถานะ: นักศึกษาสหกิจศึกษา ตำแหน่งเจ้าหน้าที่เทคนิค</p>
-            <p>สถานที่ปฏิบัติงาน: คณะเทคโนโลยีสารสนเทศ มหาวิทยาลัยศรีปทุม</p>
+            <div class="section-header">
+                <div class="badge">1</div>
+                <h2>เกี่ยวกับฉัน</h2>
+            </div>
+            <p class="about-text">
+                สวัสดีครับ ผมนายศักดิ์สิทธิ์ เจือสกุล นักศึกษาสาขาเทคโนโลยีสารสนเทศและการสื่อสาร ปัจจุบันกำลังปฏิบัติสหกิจศึกษาในตำแหน่งเจ้าหน้าที่เทคนิค ณ คณะเทคโนโลยีสารสนเทศ มหาวิทยาลัยศรีปทุม มีความสนใจด้าน UX/UI Design และการพัฒนาสื่อดิจิทัล มีความตั้งใจสูง ชอบเรียนรู้ทักษะใหม่ ๆ และพร้อมปฏิบัติงานจริงกับทีมมืออาชีพ
+            </p>
         </section>
 
-        <hr>
+        <hr class="divider">
 
-        <section id="work" class="section">
-            <h2>รายละเอียดการปฏิบัติงาน</h2>
-            <p>ลักษณะงานที่ปฏิบัติ: สนับสนุนงานทางด้านเทคโนโลยีดิจิทัล การพัฒนาชุดวิดีโอสื่อการเรียนการสอนสำหรับรายวิชา ICT25267 ระบบมาตรฐานการจัดการความมั่นคงปลอดภัยของสารสนเทศ ด้วย Canva</p>
-        </section>
-
-        <hr>
-
+        <!-- 2. การศึกษา -->
         <section id="education" class="section">
-            <h2>ประวัติการศึกษา (Education)</h2>
-            <p>มหาวิทยาลัย: มหาวิทยาลัยศรีปทุม</p>
-            <p>คณะและสาขาวิชา: คณะเทคโนโลยีสารสนเทศและการสื่อสาร</p>
-            <p>ผลการเรียน: เกรดเฉลี่ยสะสม (GPA): 3.32</p>
+            <div class="section-header">
+                <div class="badge">2</div>
+                <h2>ประวัติการศึกษา</h2>
+            </div>
+            
+            <div class="info-group">
+                <p class="text-blue">ระดับปริญญาตรี<br>ปัจจุบัน</p>
+                <h3 class="title-bold">มหาวิทยาลัยศรีปทุม</h3>
+                <p class="text-gray">คณะเทคโนโลยีสารสนเทศ | สาขางาน เทคโนโลยีสารสนเทศและการสื่อสาร</p>
+                <p class="text-blue mt-2">เกรดเฉลี่ยสะสม 3.32</p>
+            </div>
         </section>
 
-        <hr>
+        <hr class="divider">
 
+        <!-- 3. ประสบการณ์ -->
+        <section id="experience" class="section">
+            <div class="section-header">
+                <div class="badge">3</div>
+                <h2>ประสบการณ์ทำงาน</h2>
+            </div>
+
+            <div class="card">
+                <div class="card-body">
+                    <h3 class="title-bold">เจ้าหน้าที่เทคนิค</h3>
+                    <span class="tag-blue">สหกิจศึกษา</span>
+                    <p class="text-gray mt-2">คณะเทคโนโลยีสารสนเทศ มหาวิทยาลัยศรีปทุม</p>
+                    <ul class="task-list">
+                        <li>สนับสนุนงานทางด้านเทคโนโลยีดิจิทัล</li>
+                        <li>พัฒนาชุดวิดีโอสื่อการเรียนการสอนสำหรับรายวิชา ICT25267 (ระบบมาตรฐานการจัดการความมั่นคงปลอดภัยของสารสนเทศ)</li>
+                        <li>ใช้งานเครื่องมือ Canva ในการออกแบบและสร้างสรรค์ผลงาน</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <hr class="divider">
+
+        <!-- 4. ทักษะ -->
         <section id="skills" class="section">
-            <h2>ทักษะที่ใช้และผลงานอื่น ๆ (Skills & Other Projects)</h2>
-            <p>เครื่องมือและทักษะ: Figma, Canva, HTML, CSS, JavaScript</p>
-            <p>ผลงานทางวิชาการอื่น ๆ: ระบบจัดการห้องสมุดออนไลน์ (ออกแบบ UI ด้วย Figma)</p>
+            <div class="section-header">
+                <div class="badge">4</div>
+                <h2>ทักษะ</h2>
+            </div>
+            
+            <div class="skills-container">
+                <div class="skill-box">Figma</div>
+                <div class="skill-box">Canva</div>
+                <div class="skill-box">HTML</div>
+                <div class="skill-box">CSS</div>
+                <div class="skill-box">JavaScript</div>
+            </div>
         </section>
+
+        <hr class="divider">
+
+        <!-- 5. ผลงาน -->
+        <section id="projects" class="section">
+            <div class="section-header">
+                <div class="badge">5</div>
+                <h2>ผลงานอื่น ๆ</h2>
+            </div>
+
+            <div class="card card-project">
+                <div class="card-header">
+                    ระบบจัดการห้องสมุดออนไลน์
+                </div>
+                <div class="card-body">
+                    <h3 class="title-bold">โปรเจกต์ออกแบบ UI</h3>
+                    <p class="text-gray mt-2">ออกแบบส่วนต่อประสานกับผู้ใช้งาน (UX/UI Design) โดยใช้เครื่องมือ Figma ในการจัดทำ</p>
+                </div>
+            </div>
+        </section>
+
+        <hr class="divider">
+
+        <!-- 6. ติดต่อ -->
+        <section id="contact" class="section">
+            <div class="section-header">
+                <div class="badge">6</div>
+                <h2>ติดต่อ</h2>
+            </div>
+            
+            <a href="mailto:yuri05122546@gmail.com" class="btn-email">✉️ Email</a>
+            <p class="text-gray mt-2" style="margin-top: 20px;"><strong>โทรศัพท์:</strong> 091-832-2650</p>
+        </section>
+
     </main>
 
-    <!-- ส่วนท้าย (Footer) -->
-    <footer class="footer">
-        <p>ช่องทางการติดต่อ</p>
-        <p>โทรศัพท์: 091-832-2650</p>
-        <p>อีเมล: yuri05122546@gmail.com</p>
+    <!-- ส่วนท้าย -->
+    <footer>
+        <p>© 2026 Saksit Juasakul</p>
     </footer>
-</div>
-
-<!-- สคริปต์ตั้งค่าให้เมนูสไลด์เข้า-ออก -->
-<script>
-    function toggleMenu() {
-        var menu = document.getElementById("sideMenu");
-        menu.classList.toggle("active");
-    }
-</script>
 
 </body>
 </html>
