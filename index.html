@@ -3,61 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Resume - Saksit</title>
-    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;600&display=swap" rel="stylesheet">
-    <!-- ดึงไฟล์ CSS มาใช้งาน -->
+    <title>Resume - Saksit Juasakul</title>
+    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <div class="resume-wrapper">
-    <!-- ส่วนซ้าย -->
-    <div class="left-col">
-        <!-- ชื่อไฟล์รูปต้องตรงกับรูปที่คุณอัปโหลด -->
+    <!-- ส่วนหัว (Header) -->
+    <header class="header">
+        <!-- แนะนำให้ตั้งชื่อไฟล์รูปภาพใน GitHub เป็น profile.jpg เพื่อป้องกันปัญหาการอ่านชื่อภาษาไทย -->
         <img src="profile.jpg" alt="Profile Picture" class="profile-img">
-        
-        <h3>Contact</h3>
-        <div class="contact-info">
-            <p>📞 091-832-2650</p>
-            <p>📧 yuri05122546@gmail.com</p>
-            <p>📍 411/93 ถ.รัตนาธิเบศร์ ต.บางกระสอ อ.เมือง นนทบุรี</p>
-        </div>
+        <h1>SAKSIT JUASAKUL</h1>
+    </header>
 
-        <h3>Education</h3>
-        <div class="edu-info">
-            <p>มหาวิทยาลัยศรีปทุม<br>คณะเทคโนโลยีสารสนเทศและการสื่อสาร<br>เกรดเฉลี่ยสะสม (GPA): 3.37</p>
-        </div>
+    <!-- ส่วนเนื้อหา (Content) -->
+    <main class="content">
+        <section class="section">
+            <h2>ส่วนแนะนำตัว</h2>
+            <p>ชื่อ-นามสกุล: นายศักดิ์สิทธิ์ เจือสกุล (Saksit Juasakul)</p>
+            <p>สถานะ: นักศึกษาสหกิจศึกษา ตำแหน่งเจ้าหน้าที่เทคนิค</p>
+            <p>สถานที่ปฏิบัติงาน: คณะเทคโนโลยีสารสนเทศ มหาวิทยาลัยศรีปทุม</p>
+        </section>
 
-        <h3>Projects</h3>
-        <div class="project-info">
-            <p>ระบบจัดการห้องสมุดออนไลน์<br>ออกแบบ UX/UI ด้วย Figma</p>
-        </div>
-    </div>
+        <hr>
 
-    <!-- ส่วนขวา -->
-    <div class="right-col">
-        <div class="header">
-            <h1>ศักดิ์สิทธิ์ เจือสกุล</h1>
-            <h2>Saksit Juasakul</h2>
-        </div>
-        
-        <div class="content">
-            <h3>About Me</h3>
-            <p>นักศึกษาระดับปริญญาตรี สาขาเทคโนโลยีสารสนเทศ มีความสนใจด้าน UX/UI Design แม้ว่าผมยังไม่มีประสบการณ์ทำงานจริง แต่เป็นคนที่มีความตั้งใจสูง ชอบเรียนรู้ทักษะใหม่ ๆ และต้องการโอกาสในการฝึกปฏิบัติกับทีมมืออาชีพ</p>
+        <section class="section">
+            <h2>รายละเอียดการปฏิบัติงาน</h2>
+            <p>ลักษณะงานที่ปฏิบัติ: สนับสนุนงานทางด้านเทคโนโลยีดิจิทัล การพัฒนาชุดวิดีโอสื่อการเรียนการสอนสำหรับรายวิชา ICT25267 ระบบมาตรฐานการจัดการความมั่นคงปลอดภัยของสารสนเทศ ด้วย Canva</p>
+        </section>
 
-            <h3>Skills</h3>
-            <ul class="skills-list">
-                <li>Figma</li>
-                <li>Canva</li>
-                <li>HTML</li>
-                <li>CSS</li>
-                <li>JavaScript</li>
-            </ul>
+        <hr>
 
-            <h3>Certificates</h3>
-            <p>Cloud Basics: Development and Basic Concepts<br>โดย HUAWEI (ออนไลน์)</p>
-        </div>
-    </div>
+        <section class="section">
+            <h2>ประวัติการศึกษา (Education)</h2>
+            <p>มหาวิทยาลัย: มหาวิทยาลัยศรีปทุม</p>
+            <p>คณะและสาขาวิชา: คณะเทคโนโลยีสารสนเทศและการสื่อสาร</p>
+            <p>ผลการเรียน: เกรดเฉลี่ยสะสม (GPA): 3.32</p>
+        </section>
+
+        <hr>
+
+        <section class="section">
+            <h2>ทักษะที่ใช้และผลงานอื่น ๆ (Skills & Other Projects)</h2>
+            <p>เครื่องมือและทักษะ: Figma, Canva, HTML, CSS, JavaScript</p>
+            <p>ผลงานทางวิชาการอื่น ๆ: ระบบจัดการห้องสมุดออนไลน์ (ออกแบบ UI ด้วย Figma)</p>
+        </section>
+    </main>
+
+    <!-- ส่วนท้าย (Footer) -->
+    <footer class="footer">
+        <p>ช่องทางการติดต่อ</p>
+        <p>โทรศัพท์: 091-832-2650</p>
+        <p>อีเมล: yuri05122546@gmail.com</p>
+    </footer>
 </div>
 
 </body>
