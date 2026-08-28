@@ -5,149 +5,222 @@ html {
 
 body {
     font-family: 'Sarabun', sans-serif;
-    background-color: #f0f0f0;
+    background-color: #fafafa;
     margin: 0;
-    padding: 20px;
+    padding: 0;
+    color: #333;
+}
+
+/* แถบเมนูด้านบน (Navbar) */
+.navbar {
+    background-color: #0b2545; /* สีน้ำเงินเข้ม */
+    position: fixed;
+    top: 0;
+    width: 100%;
     display: flex;
     justify-content: center;
-    color: #222;
-    overflow-x: hidden; /* ป้องกันไม่ให้หน้าจอเลื่อนแนวนอน */
+    flex-wrap: wrap;
+    padding: 15px 0;
+    z-index: 1000;
 }
 
-.resume-wrapper {
-    background-color: #e3e3e3;
-    width: 100%;
-    max-width: 800px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-    position: relative;
-}
-
-.header {
-    background-color: #555555;
-    height: 140px;
-    display: flex;
-    align-items: center;
-    padding-left: 230px;
-    position: relative; /* สำคัญมาก เพื่อให้ปุ่ม 3 ขีดเกาะอยู่มุมขวาบน */
-}
-
-.header h1 {
+.navbar a {
     color: #ffffff;
-    font-size: 2.2em;
-    letter-spacing: 2px;
-    margin: 0;
+    text-decoration: none;
+    margin: 5px 15px;
+    font-size: 0.95em;
+    opacity: 0.8;
+    transition: opacity 0.3s;
+}
+
+.navbar a:hover {
+    opacity: 1;
+}
+
+/* ส่วนหัว (Hero) */
+.hero {
+    background-color: #0b2545;
+    color: #ffffff;
+    text-align: center;
+    padding: 120px 20px 50px 20px; /* ดันลงมาไม่ให้เมนูบัง */
 }
 
 .profile-img {
-    position: absolute;
-    top: 20px;
-    left: 40px;
-    width: 150px;
-    height: 190px;
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
     object-fit: cover;
-    border: 4px solid #ffffff;
-    background-color: #fff;
-}
-
-/* ================================
-   ส่วนตกแต่งปุ่มและเมนูสไลด์ด้านข้าง 
-   ================================ */
-.menu-icon {
-    position: absolute;
-    top: 25px;
-    right: 35px;
-    font-size: 35px;
-    color: #ffffff;
-    cursor: pointer;
-    z-index: 10;
-}
-
-.menu-icon:hover {
-    color: #cccccc;
-}
-
-.side-menu {
-    position: fixed; /* ให้เมนูลอยอยู่กับที่ */
-    top: 0;
-    right: -280px; /* ซ่อนเมนูไว้ทางขวานอกจอ */
-    width: 280px;
-    height: 100%;
-    background-color: #333333;
-    box-shadow: -4px 0 15px rgba(0,0,0,0.5);
-    transition: right 0.4s ease; /* เอฟเฟกต์การสไลด์ */
-    z-index: 100; /* ให้อยู่ชั้นบนสุดเสมอ */
-    padding-top: 80px;
-}
-
-/* คลาสที่จะถูกเรียกใช้งานเมื่อกดปุ่ม */
-.side-menu.active {
-    right: 0; 
-}
-
-.side-menu a {
-    padding: 15px 30px;
-    text-decoration: none;
-    font-size: 1.2em;
-    color: #ffffff;
-    display: block;
-    transition: background-color 0.3s;
-    border-bottom: 1px solid #444444;
-}
-
-.side-menu a:hover {
-    background-color: #555555;
-}
-
-.side-menu .close-btn {
-    position: absolute;
-    top: 15px;
-    right: 25px;
-    font-size: 40px;
-    border-bottom: none;
-    padding: 0;
-}
-
-.side-menu .close-btn:hover {
-    background-color: transparent;
-    color: #ff6666; /* สีแดงตอนชี้เมาส์ที่ปุ่มปิด */
-}
-
-/* ================================ */
-
-.content {
-    padding: 90px 40px 30px 40px;
-}
-
-.section {
+    border: 3px solid #ffffff;
     margin-bottom: 20px;
 }
 
-.section h2 {
-    font-size: 1.1em;
-    font-weight: 700;
-    margin-bottom: 10px;
-    color: #000;
+.hero h1 {
+    margin: 0 0 10px 0;
+    font-size: 2em;
+    letter-spacing: 1px;
 }
 
-.section p {
-    margin: 8px 0;
-    font-size: 1em;
-    line-height: 1.6;
+.hero p {
+    color: #a3bac3;
+    font-size: 0.9em;
+    line-height: 1.5;
+    margin: 0;
 }
 
-hr {
+/* คอนเทนเนอร์เนื้อหา */
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    background-color: #ffffff;
+}
+
+/* โครงสร้างแต่ละหัวข้อ */
+.section {
+    margin: 30px 0;
+}
+
+.section-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.badge {
+    background-color: #2b5c8f;
+    color: white;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    margin-right: 15px;
+}
+
+.section-header h2 {
+    margin: 0;
+    color: #0b2545;
+    font-size: 1.3em;
+}
+
+/* เส้นคั่น */
+.divider {
     border: 0;
-    border-top: 1px solid #cccccc;
-    margin: 25px 0;
+    border-top: 1px solid #eeeeee;
+    margin: 40px 0;
 }
 
-.footer {
-    background-color: #555555;
-    color: #ffffff;
-    padding: 25px 40px;
+/* ตัวอักษรตกแต่ง */
+.about-text {
+    line-height: 1.8;
+    color: #555;
 }
 
-.footer p {
+.text-blue {
+    color: #2b5c8f;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.title-bold {
     margin: 5px 0;
-    font-size: 1em;
+    font-size: 1.2em;
+    color: #222;
+}
+
+.text-gray {
+    color: #666;
+    font-size: 0.95em;
+    margin-top: 5px;
+}
+
+.mt-2 {
+    margin-top: 10px;
+}
+
+/* ป้ายสถานะ (Tag) */
+.tag-blue {
+    background-color: #e6f0fa;
+    color: #2b5c8f;
+    padding: 3px 10px;
+    border-radius: 15px;
+    font-size: 0.85em;
+    font-weight: 600;
+    display: inline-block;
+}
+
+/* รายการแบบจุด (List) */
+.task-list {
+    padding-left: 20px;
+    color: #555;
+    line-height: 1.8;
+}
+
+.task-list li {
+    margin-bottom: 8px;
+}
+
+/* กล่องเนื้อหา (Card) */
+.card {
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.06);
+    overflow: hidden;
+    border: 1px solid #f0f0f0;
+}
+
+.card-body {
+    padding: 25px;
+}
+
+.card-project .card-header {
+    background-color: #2b5c8f;
+    color: white;
+    padding: 15px 25px;
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+/* กล่องทักษะ (Skills Box) */
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.skill-box {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    padding: 10px 18px;
+    border-radius: 8px;
+    color: #444;
+    font-weight: 600;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+}
+
+/* ปุ่ม Email */
+.btn-email {
+    background-color: #0b2545;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 12px 25px;
+    border-radius: 8px;
+    display: inline-block;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.btn-email:hover {
+    background-color: #1a4273;
+}
+
+/* ส่วนท้าย (Footer) */
+footer {
+    text-align: center;
+    padding: 30px;
+    color: #999;
+    font-size: 0.9em;
+    background-color: #fafafa;
 }
