@@ -14,20 +14,25 @@
     <header class="header">
         <img src="profile.jpg" alt="Profile Picture" class="profile-img">
         <h1>SAKSIT JUASAKUL</h1>
+        
+        <!-- ปุ่ม 3 ขีด (Hamburger Menu) มุมขวาบน -->
+        <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
     </header>
+
+    <!-- เมนูสไลด์ด้านข้าง (จะซ่อนไว้ตอนแรก) -->
+    <nav class="side-menu" id="sideMenu">
+        <!-- ปุ่มกากบาทปิดเมนู -->
+        <a href="javascript:void(0)" class="close-btn" onclick="toggleMenu()">&times;</a>
+        
+        <!-- รายการหัวข้อ (เมื่อกดแล้วจะปิดเมนูอัตโนมัติ) -->
+        <a href="#about" onclick="toggleMenu()">ส่วนแนะนำตัว</a>
+        <a href="#work" onclick="toggleMenu()">รายละเอียดงาน</a>
+        <a href="#education" onclick="toggleMenu()">ประวัติการศึกษา</a>
+        <a href="#skills" onclick="toggleMenu()">ทักษะและผลงาน</a>
+    </nav>
 
     <!-- ส่วนเนื้อหา (Content) -->
     <main class="content">
-        
-        <!-- เพิ่มปุ่มเมนูตรงนี้ -->
-        <nav class="nav-menu">
-            <a href="#about" class="btn">แนะนำตัว</a>
-            <a href="#work" class="btn">รายละเอียดงาน</a>
-            <a href="#education" class="btn">ประวัติการศึกษา</a>
-            <a href="#skills" class="btn">ทักษะและผลงาน</a>
-        </nav>
-
-        <!-- ใส่ id="about" เพื่อให้ปุ่มเลื่อนมาหา -->
         <section id="about" class="section">
             <h2>ส่วนแนะนำตัว</h2>
             <p>ชื่อ-นามสกุล: นายศักดิ์สิทธิ์ เจือสกุล (Saksit Juasakul)</p>
@@ -67,6 +72,14 @@
         <p>อีเมล: yuri05122546@gmail.com</p>
     </footer>
 </div>
+
+<!-- สคริปต์ตั้งค่าให้เมนูสไลด์เข้า-ออก -->
+<script>
+    function toggleMenu() {
+        var menu = document.getElementById("sideMenu");
+        menu.classList.toggle("active");
+    }
+</script>
 
 </body>
 </html>
