@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Saksit Juasakul | Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -21,9 +21,11 @@
 
     <!-- ส่วนหัว (Hero Section) -->
     <header class="hero">
-        <img src="profile.jpg" alt="Profile Picture" class="profile-img">
-        <h1>Saksit<br>Juasakul</h1>
-        <p>นายศักดิ์สิทธิ์ เจือสกุล | นักศึกษาสหกิจศึกษา<br>สาขาเทคโนโลยีสารสนเทศและการสื่อสาร</p>
+        <div class="hero-content">
+            <img src="profile.jpg" alt="Profile Picture" class="profile-img">
+            <h1>Saksit Juasakul</h1>
+            <p>นายศักดิ์สิทธิ์ เจือสกุล | นักศึกษาสหกิจศึกษา<br>สาขาเทคโนโลยีสารสนเทศและการสื่อสาร</p>
+        </div>
     </header>
 
     <!-- เนื้อหาหลัก -->
@@ -35,12 +37,12 @@
                 <div class="badge">1</div>
                 <h2>เกี่ยวกับฉัน</h2>
             </div>
-            <p class="about-text">
-                สวัสดีครับ ผมนายศักดิ์สิทธิ์ เจือสกุล นักศึกษาสาขาเทคโนโลยีสารสนเทศและการสื่อสาร ปัจจุบันกำลังปฏิบัติสหกิจศึกษาในตำแหน่งเจ้าหน้าที่เทคนิค ณ คณะเทคโนโลยีสารสนเทศ มหาวิทยาลัยศรีปทุม มีความสนใจด้าน UX/UI Design และการพัฒนาสื่อดิจิทัล มีความตั้งใจสูง ชอบเรียนรู้ทักษะใหม่ ๆ และพร้อมปฏิบัติงานจริงกับทีมมืออาชีพ
-            </p>
+            <div class="card">
+                <p class="about-text">
+                    สวัสดีครับ ผมนายศักดิ์สิทธิ์ เจือสกุล นักศึกษาสาขาเทคโนโลยีสารสนเทศและการสื่อสาร ปัจจุบันกำลังปฏิบัติสหกิจศึกษาในตำแหน่งเจ้าหน้าที่เทคนิค ณ คณะเทคโนโลยีสารสนเทศ มหาวิทยาลัยศรีปทุม มีความสนใจด้าน UX/UI Design และการพัฒนาสื่อดิจิทัล มีความตั้งใจสูง ชอบเรียนรู้ทักษะใหม่ ๆ และพร้อมปฏิบัติงานจริงกับทีมมืออาชีพ
+                </p>
+            </div>
         </section>
-
-        <hr class="divider">
 
         <!-- 2. การศึกษา -->
         <section id="education" class="section">
@@ -48,16 +50,13 @@
                 <div class="badge">2</div>
                 <h2>ประวัติการศึกษา</h2>
             </div>
-            
-            <div class="info-group">
-                <p class="text-blue">ระดับปริญญาตรี<br>ปัจจุบัน</p>
+            <div class="card">
+                <p class="text-accent">ระดับปริญญาตรี (ปัจจุบัน)</p>
                 <h3 class="title-bold">มหาวิทยาลัยศรีปทุม</h3>
-                <p class="text-gray">คณะเทคโนโลยีสารสนเทศ | สาขางาน เทคโนโลยีสารสนเทศและการสื่อสาร</p>
-                <p class="text-blue mt-2">เกรดเฉลี่ยสะสม 3.32</p>
+                <p class="text-light-gray">คณะเทคโนโลยีสารสนเทศ | สาขางาน เทคโนโลยีสารสนเทศและการสื่อสาร</p>
+                <p class="text-accent mt-2">เกรดเฉลี่ยสะสม 3.32</p>
             </div>
         </section>
-
-        <hr class="divider">
 
         <!-- 3. ประสบการณ์ -->
         <section id="experience" class="section">
@@ -65,22 +64,17 @@
                 <div class="badge">3</div>
                 <h2>ประสบการณ์ทำงาน</h2>
             </div>
-
             <div class="card">
-                <div class="card-body">
-                    <h3 class="title-bold">เจ้าหน้าที่เทคนิค</h3>
-                    <span class="tag-blue">สหกิจศึกษา</span>
-                    <p class="text-gray mt-2">คณะเทคโนโลยีสารสนเทศ มหาวิทยาลัยศรีปทุม</p>
-                    <ul class="task-list">
-                        <li>สนับสนุนงานทางด้านเทคโนโลยีดิจิทัล</li>
-                        <li>พัฒนาชุดวิดีโอสื่อการเรียนการสอนสำหรับรายวิชา ICT25267 (ระบบมาตรฐานการจัดการความมั่นคงปลอดภัยของสารสนเทศ)</li>
-                        <li>ใช้งานเครื่องมือ Canva ในการออกแบบและสร้างสรรค์ผลงาน</li>
-                    </ul>
-                </div>
+                <h3 class="title-bold">เจ้าหน้าที่เทคนิค</h3>
+                <span class="tag-dark">สหกิจศึกษา</span>
+                <p class="text-light-gray mt-2">คณะเทคโนโลยีสารสนเทศ มหาวิทยาลัยศรีปทุม</p>
+                <ul class="task-list">
+                    <li>สนับสนุนงานทางด้านเทคโนโลยีดิจิทัล</li>
+                    <li>พัฒนาชุดวิดีโอสื่อการเรียนการสอนสำหรับรายวิชา ICT25267 (ระบบมาตรฐานการจัดการความมั่นคงปลอดภัยของสารสนเทศ)</li>
+                    <li>ใช้งานเครื่องมือ Canva ในการออกแบบและสร้างสรรค์ผลงาน</li>
+                </ul>
             </div>
         </section>
-
-        <hr class="divider">
 
         <!-- 4. ทักษะ -->
         <section id="skills" class="section">
@@ -88,7 +82,6 @@
                 <div class="badge">4</div>
                 <h2>ทักษะ</h2>
             </div>
-            
             <div class="skills-container">
                 <div class="skill-box">Figma</div>
                 <div class="skill-box">Canva</div>
@@ -98,27 +91,22 @@
             </div>
         </section>
 
-        <hr class="divider">
-
         <!-- 5. ผลงาน -->
         <section id="projects" class="section">
             <div class="section-header">
                 <div class="badge">5</div>
                 <h2>ผลงานอื่น ๆ</h2>
             </div>
-
             <div class="card card-project">
                 <div class="card-header">
                     ระบบจัดการห้องสมุดออนไลน์
                 </div>
                 <div class="card-body">
                     <h3 class="title-bold">โปรเจกต์ออกแบบ UI</h3>
-                    <p class="text-gray mt-2">ออกแบบส่วนต่อประสานกับผู้ใช้งาน (UX/UI Design) โดยใช้เครื่องมือ Figma ในการจัดทำ</p>
+                    <p class="text-light-gray mt-2">ออกแบบส่วนต่อประสานกับผู้ใช้งาน (UX/UI Design) โดยใช้เครื่องมือ Figma ในการจัดทำ</p>
                 </div>
             </div>
         </section>
-
-        <hr class="divider">
 
         <!-- 6. ติดต่อ -->
         <section id="contact" class="section">
@@ -126,9 +114,11 @@
                 <div class="badge">6</div>
                 <h2>ติดต่อ</h2>
             </div>
-            
-            <a href="mailto:yuri05122546@gmail.com" class="btn-email">✉️ Email</a>
-            <p class="text-gray mt-2" style="margin-top: 20px;"><strong>โทรศัพท์:</strong> 091-832-2650</p>
+            <div class="card contact-card">
+                <a href="mailto:yuri05122546@gmail.com" class="btn-email">✉️ ส่งอีเมลติดต่อ</a>
+                <p class="text-light-gray mt-2"><strong>โทรศัพท์:</strong> 091-832-2650</p>
+                <p class="text-light-gray"><strong>อีเมล:</strong> yuri05122546@gmail.com</p>
+            </div>
         </section>
 
     </main>
